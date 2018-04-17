@@ -29,7 +29,7 @@ II. Setup Instructions.
 III. File strutcture and overall architecture.  
 
 Most important files: 
-1. The "database" folder contains MySQL functions, and "database.py" - a python API for interactions with the DB. 
+1. The !["database"](https://raw.githubusercontent.com/OLGKAD/Gmail-Messenger-Bot/master/database) folder contains MySQL functions, and "database.py" - a python API for interactions with the DB. 
 2. "gbot.py" - for interactions with the Gmail end using Gmail API.
 3. "__init__.py" - uses Flask to handle the communications with the client side (FB Messenger and the web-form).
 4. "mbot.py" -  serves as a middleware between "database.py" and "__init__.py". 
