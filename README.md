@@ -29,10 +29,10 @@ II. Setup Instructions.
 III. File strutcture and overall architecture.  
 
 Most important files: 
-1. The ["database"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/database) folder contains MySQL functions, and "database.py" - a python API for interactions with the DB. 
-2. "gbot.py" - for interactions with the Gmail end using Gmail API.
-3. "__init__.py" - uses Flask to handle the communications with the client side (FB Messenger and the web-form).
-4. "mbot.py" -  serves as a middleware between "database.py" and "__init__.py". 
+1. The ["database"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/database) folder contains MySQL functions, and ["database.py"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/database/database.py) - a python API for interactions with the DB. 
+2. ["gbot.py"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/gbot.py) - for interactions with the Gmail end using Gmail API.
+3. ["__init__.py"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/__init__.py) - uses Flask to handle the communications with the client side (FB Messenger and the web-form).
+4. ["mbot.py"](https://github.com/OLGKAD/Gmail-Messenger-Bot/blob/master/mailbotapp/mbot.py) -  serves as a middleware between "database.py" and "__init__.py". 
 
 <img src="images/architecture.png" alt="architecture">
 
