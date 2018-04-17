@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>{{ sender_name }}</h2>
+
+  {% if success %}
+    <p>Your reply has been sent.</p>
+  
+  {% else %}
+    <div class="panel-body">
+        <ul class="chat">
+            {{ conv_body|safe }}
+        </ul>
+    </div>
+
+    {% for message in form.message.errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    
+    <form action={{ action_url }} method="POST" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+      
+      {{ form.message.label }}
+      {{ form.message }}
+      
+      {{ form.attachment.label }}
+      {{ form.attachment }}
+
+      {{ form.submit }}
+    </form>
+  
+  {% endif %}
+{% endblock %} 

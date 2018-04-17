@@ -1,0 +1,59 @@
+# users table
+create table tbl_users (
+	user_id BIGINT UNIQUE AUTO_INCREMENT,
+	user_name VARCHAR(45) NULL, 
+	user_email VARCHAR(45) NULL, 
+	user_token VARCHAR(45) NULL, 
+	user_FB_id BIGINT NULL, 
+	user_FB_name VARCHAR(45) NULL,
+	PRIMARY KEY (user_id));
+
+
+# emails table
+create table tbl_emails (
+        email_id BIGINT UNIQUE AUTO_INCREMENT, 
+        email_recipient_id BIGINT NULL, 
+        email_sender_id BIGINT NULL, 
+        email_subject TEXT NULL,
+	email_sender_name VARCHAR(45) NULL,
+	email_text TEXT NULL,
+	email_date DATETIME NULL,
+	FOREIGN KEY (email_recipient_id)
+		REFERENCES tbl_users(user_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE, 
+        PRIMARY KEY (email_id));
+
+
+# add_user procedure
+DELIMER $$
+CREATE DEFINER = mailbot@example PROCEDURE add_user (
+	IN name VARCHAR(45),
+        IN email VARCHAR(45),
+        IN token VARCHAR(45),
+        IN FB_id BIGINT,
+        IN FB_name VARCHAR(45)
+)
+BEGIN
+	if (select exists (select 1 from tbl_users where user_email = email) ) THEN
+		select 'This email address has already been used';
+	ELSE
+		insert into tbl_users
+		(
+			user_name,
+			user_email,
+			user_token,
+			user_FB_id,
+			user_FB_name
+		)
+		values
+		(
+			name,
+			email,
+			token,
+			FB_id,
+			FB_name
+		);
+	END IF;
+END $$
+DELIMER ;
