@@ -34,7 +34,7 @@ Most important files:
 3. "__init__.py" - uses Flask to handle the communications with the client side (FB Messenger and the web-form).
 4. "mbot.py" -  serves as a middleware between "database.py" and "__init__.py". 
 
-[alt text](images/architecture.png)
+<img src="images/architecture.png" alt="architecture">
 
 
 IV. Credits. 
