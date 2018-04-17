@@ -36,4 +36,4 @@ Most important files:
 
 IV. Credits. 
 
-The code was written and developed by me (Olzhas Kadyrakunov), Alisher Tortay and Yekaterina Abileva. Roughly, Kate was responsible for the Gmail end of the system, I was responsible for the "middle part" (interactions with the database), and Alisher was responsible for the FB Messenger end. 
+The code was written and developed by me (Olzhas Kadyrakunov), Alisher Tortay and Yekaterina Abileva. Roughly speaking, Kate was responsible for the Gmail end of the system, I was responsible for the "middle part" (interactions with the database), and Alisher was responsible for the FB Messenger end. 
